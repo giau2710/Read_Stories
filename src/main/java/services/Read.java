@@ -20,9 +20,9 @@ public class Read {
             long id = (long) jsonObject.get("id");
             String fullName = (String) jsonObject.get("fullName");
             String username = (String) jsonObject.get("username");
-            long password = (long) jsonObject.get("password");
+            String password = (String) jsonObject.get("password");
             String email = (String) jsonObject.get("email");
-            User newUser = new User((int) id, fullName, username, (int) password, email);
+            User newUser = new User((int) id, fullName, username,  password, email);
             list.add(newUser);
         }
     }

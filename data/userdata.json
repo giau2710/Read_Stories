@@ -1,93 +1,16 @@
 [
   {
-    "id": 5,
-    "fullName": "Tran Giau",
-    "username": "giauvl",
-    "password": 154461,
-    "email": "goau@gmail.com"
+    "id": 111,
+    "fullName": "Huynh Van Giau",
+    "username": "giauadmin",
+    "password": "giau111",
+    "email": "giau@gmail.com"
   },
   {
-    "id": 445,
+    "id": 1,
     "fullName": "Tran Quang Tien",
-    "username": "tqtteambnb",
-    "password": 5415465,
-    "email": "tqtteam@gmsil.com"
-  },
-  {
-    "id": 5,
-    "fullName": "Tran Giau",
-    "username": "giauvl",
-    "password": 154461,
-    "email": "goau@gmail.com"
-  },
-  {
-    "id": 445,
-    "fullName": "Tran Quang Tien",
-    "username": "tqtteambnb",
-    "password": 5415465,
-    "email": "tqtteam@gmsil.com"
-  },
-  {
-    "id": 5656,
-    "fullName": "Tokuda",
-    "username": "tkd",
-    "password": 12544,
-    "email": "tokudacuto@gmail.com"
-  },
-  {
-    "id": 87448,
-    "fullName": "Ha Sung Heng",
-    "username": "hasunghemgh",
-    "password": 11844,
-    "email": "tadad@gmail.com"
-  },
-  {
-    "id": 5,
-    "fullName": "Tran Giau",
-    "username": "giauvl",
-    "password": 154461,
-    "email": "goau@gmail.com"
-  },
-  {
-    "id": 445,
-    "fullName": "Tran Quang Tien",
-    "username": "tqtteambnb",
-    "password": 5415465,
-    "email": "tqtteam@gmsil.com"
-  },
-  {
-    "id": 5,
-    "fullName": "Tran Giau",
-    "username": "giauvl",
-    "password": 154461,
-    "email": "goau@gmail.com"
-  },
-  {
-    "id": 445,
-    "fullName": "Tran Quang Tien",
-    "username": "tqtteambnb",
-    "password": 5415465,
-    "email": "tqtteam@gmsil.com"
-  },
-  {
-    "id": 5656,
-    "fullName": "Tokuda",
-    "username": "tkd",
-    "password": 12544,
-    "email": "tokudacuto@gmail.com"
-  },
-  {
-    "id": 87448,
-    "fullName": "Ha Sung Heng",
-    "username": "hasunghemgh",
-    "password": 11844,
-    "email": "tadad@gmail.com"
-  },
-  {
-    "id": 652,
-    "fullName": "Nung A XIng",
-    "username": "nungaxunh123",
-    "password": 26251,
-    "email": "nung@gmail.com"
+    "username": "1",
+    "password": "1",
+    "email": "tien@gmail.com"
   }
 ]

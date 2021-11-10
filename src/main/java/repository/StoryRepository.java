@@ -20,14 +20,20 @@ public class StoryRepository {
         Read.readJsonStory(storyList, "data/storydata.json");
     }
 
-//   public void checkExistUser() throws IOException, ParseException {
-//     StoryRepository.importStoryToList();
-//       for (int i = 0; i < storyList.size(); i++) {
-//
-//       }
-//   }
+    public boolean checkExistStory(int ipId, String ipname, String ipcategory,String ipauthor ) throws IOException, ParseException {
+        for (int i = 0; i <storyList.size() ; i++) {
+            int id = storyList.get(i).getId();
+            String name = storyList.get(i).getName();
+            String category = storyList.get(i).getCategory();
+            String author= storyList.get(i).getAuthor();
+            if(id == ipId ||(name.equals(ipname) && category.equals(ipcategory) && author.equals(ipauthor))){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addStory() throws IOException, ParseException {
-        StoryRepository.importStoryToList();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhap thong tin truyen: ");
         System.out.print("id: ");
@@ -35,16 +41,21 @@ public class StoryRepository {
         scanner.nextLine();
         System.out.print("name: ");
         String name = scanner.nextLine();
-        System.out.print("categery: ");
-        String categery = scanner.nextLine();
+        System.out.print("category: ");
+        String category = scanner.nextLine();
         System.out.print("path: ");
         String path = scanner.nextLine();
         System.out.print("author: ");
         String author = scanner.nextLine();
-        Story newStory = new Story(id, name, categery, path, author);
-        storyList.add(newStory);
-        String jsonUser = JacksonParser.INSTANCE.toJson(storyList);
-        Write.writeJsonFile(jsonUser, "data/storydata.json");
+        if (checkExistStory(id,name,category,author)) {
+            System.out.println("Truyen da ton tai");
+        }else {
+            Story newStory = new Story(id, name, category, path, author);
+            storyList.add(newStory);
+            String jsonUser = JacksonParser.INSTANCE.toJson(storyList);
+            Write.writeJsonFile(jsonUser, "data/storydata.json");
+        }
+
     }
 
 }

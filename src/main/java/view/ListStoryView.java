@@ -11,7 +11,6 @@ import java.util.List;
 
 public class ListStoryView {
     public static void view() throws IOException, ParseException {
-        StoryRepository.importStoryToList();
         List<Story> storyList = StoryRepository.storyList;
         System.out.println("\t\t\t\t\t\t-----------------------------------DANH SACH TRUYEN------------------------------");
         System.out.printf("\t\t\t\t\t\t %-5s %-35s %-30s %-20s\n", "ID", "Name Story","Category", "Author");
