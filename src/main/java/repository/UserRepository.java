@@ -6,7 +6,7 @@ import services.JacksonParser;
 import services.Read;
 import services.Write;
 
-import java.io.File;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -18,9 +18,9 @@ public class UserRepository {
     public static List<User>  userList = new ArrayList<>();
 
    public static void importUserToList() throws IOException, ParseException {
-       long fileSize = Files.size(Paths.get("data/userdata.json"));
+       long fileSize = Files.size(Paths.get("data/user.json"));
        if (fileSize != 0 ){
-           Read.readJsonUser(userList,"data/userdata.json");
+           Read.readJsonUser(userList,"data/user.json");
        }
    }
    public boolean checkExistUser(int ipId, String ipUserName, String ipEmail ) throws IOException, ParseException {
@@ -34,6 +34,7 @@ public class UserRepository {
        }
        return false;
    }
+
     public void addUser() throws IOException, ParseException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhap thong tin nguoi dung: ");
@@ -55,8 +56,9 @@ public class UserRepository {
             User newUser = new User(id,fullName,username,password,email);
             userList.add(newUser);
             String jsonUser = JacksonParser.INSTANCE.toJson(userList);
-            Write.writeJsonFile(jsonUser,"data/userdata.json" );
+            Write.writeJsonFile(jsonUser,"data/user.json" );
         }
 
     }
+
 }

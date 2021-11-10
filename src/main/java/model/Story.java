@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Story {
     private int id;
     private String name;
@@ -58,5 +60,18 @@ public class Story {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Story story = (Story) o;
+        return id == story.id && Objects.equals(name, story.name) && Objects.equals(category, story.category) && Objects.equals(path, story.path) && Objects.equals(author, story.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, category, path, author);
     }
 }

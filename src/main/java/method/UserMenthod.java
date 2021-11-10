@@ -1,11 +1,12 @@
 package method;
 
+import model.Story;
 import org.json.simple.parser.ParseException;
 import repository.StoryRepository;
-import view.ListStoryView;
+import repository.UserRepository;
+import view.StoryView;
 import view.ViewMenu;
 
-import javax.swing.text.View;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -13,22 +14,29 @@ import java.util.Scanner;
 
 public class UserMenthod {
 
+    static StoryRepository storyRepository = new StoryRepository();
+    static StoryView storyView = new StoryView();
 
     public static void showFunciton() throws IOException, ParseException {
         System.out.println("Chon chuc nang: ");
         Scanner scanner = new Scanner(System.in);
+
         int choice = scanner.nextInt();
         switch (choice) {
             case 1:
-                ListStoryView.view();
+                storyView.view();
                 readStory();
-                System.out.println("Nhan 1 De Doc Truyen Tiep\n" +
-                                   "Nhan 2 De Tro Lai");
+                System.out.println("---------------------------");
+                System.out.println("Nhap 1 de doc truyen tiep ");
+                System.out.println("Nhap 2 de quay lai         ");
+                System.out.println("---------------------------");
                 int choice2 = scanner.nextInt();
-                while (choice2 == 1){
+                while (choice2 == 1) {
                     readStory();
-                    System.out.println("Nhan 1 De Doc Truyen Tiep\n" +
-                            "Nhan 2 De Tro Lai");
+                    System.out.println("---------------------------");
+                    System.out.println("Nhap 1 de doc truyen tiep ");
+                    System.out.println("Nhap 2 de quay lai         ");
+                    System.out.println("---------------------------");
                     choice2 = scanner.nextInt();
                 }
                 ViewMenu.showMenuUser();
@@ -41,15 +49,11 @@ public class UserMenthod {
         String path = null;
         int idStory = scanner.nextInt();
         System.out.println(idStory);
-        for (int i = 0; i < StoryRepository.storyList.size(); i++) {
-           if(idStory == StoryRepository.storyList.get(i).getId()){
-               path=StoryRepository.storyList.get(i).getPath();
-           };
-        }
-        readPdf( path);
+        Story story = storyRepository.getById(idStory);
+        readPdf(story.getPath());
     }
-    public static void readPdf(String path){
 
+    public static void readPdf(String path) {
         if (Desktop.isDesktopSupported()) {
             try {
                 File myFile = new File(path);
@@ -59,4 +63,6 @@ public class UserMenthod {
             }
         }
     }
+
+
 }
