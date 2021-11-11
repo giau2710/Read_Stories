@@ -3,10 +3,10 @@ package model;
 public enum BookType {
     FAIRY_TALES_VN(1), FAIRY_TALES_FOREIGN(2);
 
-    private int value;
+    private final int value;
 
 
-    private BookType(int value) {
+    BookType(int value) {
         this.value = value;
     }
 

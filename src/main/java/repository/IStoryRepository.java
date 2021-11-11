@@ -15,6 +15,8 @@ public interface IStoryRepository {
 
     void add(Story story);
 
+    void edit(int id);
+
     void delete(int id);
 
     boolean exist(Story newStory);

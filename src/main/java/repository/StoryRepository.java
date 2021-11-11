@@ -45,6 +45,18 @@ public class StoryRepository implements IStoryRepository {
         TextFile.write(filePath, json);
     }
     @Override
+    public void edit(int id) {
+        List<Story> stories = getStories();
+        for (Story story : getStories()) {
+            if (story.getId() == id) {
+
+                String json = JacksonParser.INSTANCE.toJson(stories);
+                TextFile.write(filePath, json);
+                break;
+            }
+        }
+    }
+    @Override
     public void delete(int id) {
         List<Story> stories = getStories();
         for (Story story: getStories()) {

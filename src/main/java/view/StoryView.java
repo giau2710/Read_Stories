@@ -1,15 +1,9 @@
 package view;
 
 import model.Story;
-import org.json.simple.parser.ParseException;
 import repository.StoryRepository;
-import repository.UserRepository;
-import services.Read;
-
-import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
-
 public class StoryView {
     StoryRepository storyRepository = new StoryRepository();
 
@@ -47,8 +41,5 @@ public class StoryView {
         } else {
             storyRepository.add(newStory);
         }
-    }
-    public void deleteStory(){
-
     }
 }

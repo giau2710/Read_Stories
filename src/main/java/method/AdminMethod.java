@@ -1,6 +1,7 @@
 package method;
 
 
+import model.Story;
 import org.json.simple.parser.ParseException;
 import repository.StoryRepository;
 import view.StoryView;
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import static method.UserMenthod.readStory;
+import static method.UserMenthod.storyRepository;
 
 public class AdminMethod {
 
@@ -56,7 +58,7 @@ public class AdminMethod {
                 }
                 ViewMenu.showMenuAdmin();
             case 3:
-                deleteStory();
+                editStory();
                 break;
             case 4:
                 deleteStory();
@@ -67,10 +69,17 @@ public class AdminMethod {
     }
     public static void deleteStory(){
         StoryRepository storyRepository = new StoryRepository();
-        System.out.println("Nhap id truyen can xoa");
+        System.out.print("Nhap id truyen can xoa: ");
         Scanner scanner = new Scanner(System.in);
         int id = scanner.nextInt();
         storyRepository.delete(id);
+    }
+    public static void editStory(){
+        Scanner scanner = new Scanner(System.in);
+        StoryRepository storyRepository = new StoryRepository();
+        System.out.print("Nhap id truyen can sua: ");
+        int id = scanner.nextInt();
+        storyRepository.edit(id);
     }
 
 }

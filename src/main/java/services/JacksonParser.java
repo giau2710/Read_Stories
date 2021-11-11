@@ -17,7 +17,7 @@ import java.util.List;
 @SuppressWarnings("unchecked")
 public class JacksonParser {
     public static final JacksonParser INSTANCE = new JacksonParser();
-    private ObjectMapper mapper;
+    private final ObjectMapper mapper;
     private JacksonParser() {
         mapper = new ObjectMapper();
         mapper.setDefaultPropertyInclusion(Value.construct(Include.ALWAYS, Include.NON_NULL));

@@ -27,10 +27,7 @@ public class Login {
     }
 
     public static boolean checkAdmin(){
-        if (iPUsername.equals("2") && iPPassword.equals("2")){
-            return true;
-        }
-        return false;
+        return iPUsername.equals("2") && iPPassword.equals("2");
     }
 
 }
