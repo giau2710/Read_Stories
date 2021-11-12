@@ -11,7 +11,6 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import static method.UserMenthod.readStory;
-import static method.UserMenthod.storyRepository;
 
 public class AdminMethod {
 

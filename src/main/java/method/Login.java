@@ -8,18 +8,18 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Login {
-    private static String iPUsername;
-    private static String iPPassword;
+    private static String ipUsername;
+    private static String ipPassword;
 
     public static boolean loginUser() throws IOException, ParseException {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhap username: ");
-         iPUsername = scanner.nextLine();
+         ipUsername = scanner.nextLine();
         System.out.print("Nhap password: ");
-        iPPassword=scanner.nextLine();
+        ipPassword=scanner.nextLine();
         for (int i = 0; i < UserRepository.userList.size() ; i++) {
-            if(iPPassword.equals(UserRepository.userList.get(i).getPassword())
-                    && iPUsername.equals(UserRepository.userList.get(i).getUsername())){
+            if(ipPassword.equals(UserRepository.userList.get(i).getPassword())
+                    && ipUsername.equals(UserRepository.userList.get(i).getUsername())){
                 return true;
             }
         }
@@ -27,7 +27,7 @@ public class Login {
     }
 
     public static boolean checkAdmin(){
-        return iPUsername.equals("2") && iPPassword.equals("2");
+        return ipUsername.equals("2") && ipPassword.equals("2");
     }
 
 }
