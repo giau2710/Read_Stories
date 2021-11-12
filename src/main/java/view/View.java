@@ -16,6 +16,10 @@ public class View {
             Scanner scanner = new Scanner(System.in);
             try {
                 choose = scanner.nextInt();
+                if (choose==0) {
+                    System.out.println("Da thoat chuong trinh,cam on ban da su dung!");
+                    System.exit(0);
+                }
                 switch (choose) {
                     case 1:
                         if (Login.loginUser()) {
