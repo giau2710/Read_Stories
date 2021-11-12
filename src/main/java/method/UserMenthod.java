@@ -23,9 +23,9 @@ public class UserMenthod {
     public static void showFunciton() throws IOException, ParseException {
         Scanner scanner = new Scanner(System.in);
 
-        int choice = scanner.nextInt();
+        String choice = scanner.nextLine();
         switch (choice) {
-            case 1:
+            case "1":
 
                 storyView.view();
                 readStory();
@@ -33,26 +33,22 @@ public class UserMenthod {
                 System.out.println("Nhap 1 de doc truyen tiep ");
                 System.out.println("Nhap 0 de quay lai         ");
                 System.out.println("---------------------------");
-                try {
-                    int choice2 = scanner.nextInt();
-                    while (choice2 == 1) {
-                        readStory();
-                        System.out.println("---------------------------");
-                        System.out.println("Nhap 1 de doc truyen tiep ");
-                        System.out.println("Nhap 0 de quay lai         ");
-                        System.out.println("---------------------------");
-                        choice2 = scanner.nextInt();
-                    }
-                    ViewMenu.showMenuUser();
-                } catch (Exception e) {
-                    System.out.println("Ban da nhap sai,vui long nhap lai");
-                }
-
+                    String choice2 = scanner.nextLine();
+                        while (choice2.equals("1")) {
+                            readStory();
+                            System.out.println("---------------------------");
+                            System.out.println("Nhap 1 de doc truyen tiep ");
+                            System.out.println("Nhap 0 de quay lai         ");
+                            System.out.println("---------------------------");
+                            choice2 = scanner.nextLine();
+                        }
+                ViewMenu.showMenuUser();
                 break;
-            case 2:
+            case "2":
                 System.out.println("Chua lam duoc: ");
+                ViewMenu.showMenuUser();
                 break;
-            case 0:
+            case "0":
                 View.viewFirst();
 
             default:

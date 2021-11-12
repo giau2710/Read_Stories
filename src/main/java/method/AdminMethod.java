@@ -26,14 +26,14 @@ public class AdminMethod {
                 storyRepository.addStory();
                 System.out.println("---------------------------");
                 System.out.println("Nhap 1 de them truyen tiep ");
-                System.out.println("Nhap 2 de quay lai         ");
+                System.out.println("Nhap 0 de quay lai         ");
                 System.out.println("---------------------------");
                 int choice2 = scanner.nextInt();
                 while (choice2 == 1) {
                     storyRepository.addStory();
                     System.out.println("---------------------------");
                     System.out.println("Nhap 1 de them truyen tiep ");
-                    System.out.println("Nhap 2 de quay lai         ");
+                    System.out.println("Nhap 0 de quay lai         ");
                     System.out.println("---------------------------");
 
                     choice2 = scanner.nextInt();
@@ -45,14 +45,14 @@ public class AdminMethod {
                 readStory();
                 System.out.println("---------------------------");
                 System.out.println("Nhap 1 de doc truyen tiep ");
-                System.out.println("Nhap 2 de quay lai         ");
+                System.out.println("Nhap 0 de quay lai         ");
                 System.out.println("---------------------------");
                  choice2 = scanner.nextInt();
                 while (choice2 == 1){
                     readStory();
                     System.out.println("---------------------------");
                     System.out.println("Nhap 1 de doc truyen tiep ");
-                    System.out.println("Nhap 2 de quay lai         ");
+                    System.out.println("Nhap 0 de quay lai         ");
                     System.out.println("---------------------------");
                     choice2 = scanner.nextInt();
                 }
@@ -62,9 +62,15 @@ public class AdminMethod {
                 break;
             case 4:
                 deleteStory();
+                System.out.println("Da xoa thanh cong");
+                ViewMenu.showMenuAdmin();
+                break;
+            case 0:
+                ViewMenu.showMenu();
                 break;
             default:
                 break;
+
         }
     }
     public static void deleteStory(){

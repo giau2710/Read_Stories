@@ -38,7 +38,7 @@ public class ViewMenu {
         System.out.println("| 2.Xem danh sach truyen               |");
         System.out.println("| 3.Sua tryen                          |");
         System.out.println("| 4.Xoa truyen                         |");
-        System.out.println("|                 0.Thoat chuong trinh |");
+        System.out.println("|                         0.Quay lai   |");
         System.out.println("|--------------------------------------|");
         AdminMethod.showFuntion();
     }
